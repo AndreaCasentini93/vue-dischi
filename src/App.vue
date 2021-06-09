@@ -28,5 +28,8 @@ export default {
 <style lang="scss">
   @import '~bootstrap/scss/bootstrap.scss';
   @import './style/general.scss';
+  @import './style/variables.scss';
+  @import './style/mixins.scss';
 
+  
 </style>
