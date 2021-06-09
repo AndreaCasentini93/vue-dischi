@@ -1,0 +1,10 @@
+@mixin flex-centering($type: both) {
+    @if $type == 'vertical' {
+        align-items: center;
+    } @else if $type == 'horizontal' {
+        justify-content: center;
+    } @else {
+        justify-content: center;
+        align-items: center;
+    }
+}

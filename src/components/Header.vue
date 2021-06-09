@@ -1,9 +1,11 @@
 <template>
-    <nav>
-        <a href="#">
-            <img src="../assets/img/spotify.png" alt="Logo Spotify">
-        </a>
-    </nav>
+    <header>
+        <nav>
+            <a href="#">
+                <img src="../assets/img/spotify.png" alt="Logo Spotify">
+            </a>
+        </nav>
+    </header>
 </template>
 
 <script>
@@ -16,12 +18,14 @@ export default {
     @import '../style/variables.scss';
     @import '../style/mixins.scss';
 
-    nav {
-        padding: 10px 20px;
-        background-color: $grey;
+    header {
+        nav {
+            padding: 10px 20px;
+            background-color: $grey;
 
-        img {
-            max-width: 50px;
+            img {
+                max-width: 50px;
+            }
         }
     }
 </style>

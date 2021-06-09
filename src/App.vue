@@ -32,5 +32,4 @@ export default {
   @import './style/variables.scss';
   @import './style/mixins.scss';
 
-  
 </style>
