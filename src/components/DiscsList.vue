@@ -30,7 +30,7 @@ export default {
             .get(this.apiUrl)
             .then((response) => {
                 this.discs = response.data.response;
-                // this.loading = false;
+                this.loading = false;
             })
             .catch()
   }
