@@ -1,24 +1,28 @@
 <template>
-    <section>
+    <section id="discs_list" v-if="!loading">
         <div class="my_container">
             <Disc v-for="disc, index in discs" :key="index" :card="disc" />
         </div>
     </section>
+    <Loading msg="Vue Dischi App" v-else />
 </template>
 
 <script>
 import axios from 'axios';
 import Disc from './Disc.vue';
+import Loading from './Loading.vue';
 
 export default {
     name: 'DiscsList',
     components: {
-        Disc
+        Disc,
+        Loading
     },
     data: function() {
         return {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
-            discs: []
+            discs: [],
+            loading: true
         }
     },
     created: function() {
@@ -26,6 +30,7 @@ export default {
             .get(this.apiUrl)
             .then((response) => {
                 this.discs = response.data.response;
+                // this.loading = false;
             })
             .catch()
   }
@@ -36,7 +41,7 @@ export default {
     @import '../style/variables.scss';
     @import '../style/mixins.scss';
 
-    section {
+    #discs_list {
         background-color: $blue;
 
         .my_container {
