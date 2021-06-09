@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="my_container">
-            <Disc v-for="disc, index in discs" :key="index" />
+            <Disc v-for="disc, index in discs" :key="index" :card="disc" />
         </div>
     </section>
 </template>
@@ -37,16 +37,15 @@ export default {
     @import '../style/mixins.scss';
 
     section {
-        height: calc(100vh - 70px);
         background-color: $blue;
 
         .my_container {
             display: flex;
-            @include flex-centering;
+            @include flex-centering('horizontal');
             align-content: center;
             flex-wrap: wrap;
             height: 100%;
-            color: white;
+            padding: 50px 0;
         }
     }
 </style>

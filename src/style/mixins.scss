@@ -1,3 +1,4 @@
+// Centratura con Flex
 @mixin flex-centering($type: both) {
     @if $type == 'vertical' {
         align-items: center;

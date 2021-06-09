@@ -21,7 +21,7 @@ export default {
     header {
         nav {
             padding: 10px 20px;
-            background-color: $grey;
+            background-color: $dark-grey;
 
             img {
                 max-width: 50px;
