@@ -28,6 +28,11 @@ export default {
 
             img {
                 max-width: 50px;
+                transition: filter .3s;
+
+                &:hover {
+                    filter: brightness(130%);
+                }
             }
         }
     }

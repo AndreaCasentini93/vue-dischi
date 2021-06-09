@@ -24,10 +24,10 @@ export default {
         padding: 10px;
         margin: 12px 18px;
         background-color: $dark-grey;
+        transition: transform .3s;
 
-        &:hover > img {
-            filter: grayscale(100%);
-            opacity: 0.5;
+        &:hover {
+            transform: scale(1.05);
         }
 
         img {
@@ -37,7 +37,6 @@ export default {
             margin-bottom: 15px;
             object-fit: cover;
             object-position: top;
-            transition: filter .3s, opacity .3s;
         }
 
         h4 {
