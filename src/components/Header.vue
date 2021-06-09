@@ -2,7 +2,7 @@
     <header>
         <nav>
             <a href="#">
-                <img src="../assets/img/spotify.png" alt="Logo Spotify">
+                <img :src="image" alt="Logo Spotify">
             </a>
         </nav>
     </header>
@@ -10,7 +10,10 @@
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    props: {
+        image: String
+    }
 }
 </script>
 

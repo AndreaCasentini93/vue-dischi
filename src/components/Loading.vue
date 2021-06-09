@@ -16,5 +16,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '../style/variables.scss';
+    @import '../style/mixins.scss';
 
+    #loading {
+        display: flex;
+        @include flex-centering;
+        width: 100%;
+        height: 100%;
+    }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- HEADER -->
-    <Header />
+    <Header :image="logo" />
     <!-- /HEADER -->
 
     <!-- MAIN -->
@@ -21,15 +21,17 @@ export default {
   components: {
     Header,
     DiscsList
+  },
+  data: function() {
+    return {
+      logo: require('./assets/img/spotify.png')
+    }
   }
 }
 </script>
 
 <style lang="scss">
-  @import '~bootstrap/scss/bootstrap.scss';
   @import './style/general.scss';
-  @import './style/variables.scss';
-  @import './style/mixins.scss';
 
 
 </style>
