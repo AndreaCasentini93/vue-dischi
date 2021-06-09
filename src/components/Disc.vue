@@ -1,9 +1,9 @@
 <template>
-    <div class="text-center">
+    <a :href="card.poster" class="text-center">
         <img :src="card.poster" :alt="card.title">
         <h4>{{ card.title }}</h4>
         <h6>{{ card.author }}<br>{{ card.year }}</h6>
-    </div>
+    </a>
 </template>
 
 <script>
@@ -19,11 +19,16 @@ export default {
     @import '../style/variables.scss';
     @import '../style/mixins.scss';
 
-    div {
+    a {
         width: calc((100% / 5) - 36px);
         padding: 10px;
         margin: 12px 18px;
         background-color: $dark-grey;
+
+        &:hover > img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
 
         img {
             display: block;
@@ -32,6 +37,7 @@ export default {
             margin-bottom: 15px;
             object-fit: cover;
             object-position: top;
+            transition: filter .3s, opacity .3s;
         }
 
         h4 {
