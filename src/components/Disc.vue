@@ -21,7 +21,7 @@ export default {
 
     a {
         width: calc((100% / 5) - 40px);
-        padding: 20px;
+        padding: 22px;
         margin: 15px 20px;
         background-color: $dark-grey;
         transition: transform .3s;
@@ -33,7 +33,7 @@ export default {
         img {
             display: block;
             width: 100%;
-            height: 160px;
+            height: 150px;
             margin-bottom: 15px;
             object-fit: cover;
             object-position: top;

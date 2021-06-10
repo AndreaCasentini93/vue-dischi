@@ -49,7 +49,8 @@ export default {
             @include flex-centering('horizontal');
             align-content: center;
             flex-wrap: wrap;
-            padding: 50px 0;
+            max-width: calc(1170px + 40px);
+            padding: 50px;
         }
     }
 </style>
