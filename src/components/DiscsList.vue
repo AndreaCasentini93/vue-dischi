@@ -2,7 +2,7 @@
     <section id="discs_list" v-if="!loading">
         <Select @changeGenre="changeType"/>
         <div class="my_container">
-            <Disc v-for="disc, index in discs" :key="index" :card="disc" />
+            <Disc v-for="disc, index in selectedDiscs" :key="index" :card="disc" />
         </div>
     </section>
     <Loading msg="Vue Dischi App" v-else />
@@ -45,8 +45,6 @@ export default {
     methods: {
         changeType: function(genre) {
             this.musicGenre = genre;
-            console.log(this.musicGenre);
-            console.log(this.selectedDiscs);
         }
     },
     created: function() {
@@ -66,6 +64,7 @@ export default {
     @import '../style/mixins.scss';
 
     #discs_list {
+        min-height: calc(100vh - 70px);
         background-color: $blue;
 
         .my_container {

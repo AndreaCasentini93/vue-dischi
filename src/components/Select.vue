@@ -38,6 +38,7 @@ export default {
         display: inline-block;
         width: unset;
         min-width: 220px;
+        max-height: 38px;
         cursor: pointer;
     }
 </style>
