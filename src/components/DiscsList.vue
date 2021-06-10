@@ -55,14 +55,16 @@ export default {
             return newArray;
         },
         musicGenre: function() {
+            console.log('Genere = ', this.discsGenre);
             return this.discsGenre;
         },
         musicAuthor: function() {
+            console.log('Autore = ', this.discsAuthor);
             return this.discsAuthor;
         },
         selectedDiscs: function() {
 
-            if (this.musicGenre == '' && this.musicAuthor == '' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == 'Seleziona un Autore' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == ''|| this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == '') {
+            if (this.musicGenre == '' && this.musicAuthor == '' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == 'Seleziona un Autore' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == ''|| this.musicGenre == '' && this.musicAuthor == 'Seleziona un Autore') {
                 console.log('Tutti')
                 return this.discs;
             }
