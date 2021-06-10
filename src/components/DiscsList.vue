@@ -28,6 +28,11 @@ export default {
             loading: true
         }
     },
+    methods: {
+        // changeGenre: function(genre) {
+        //     console.log(genre);
+        // }
+    },
     created: function() {
         axios
             .get(this.apiUrl)
@@ -36,7 +41,7 @@ export default {
                 this.loading = false;
             })
             .catch()
-  }
+    }
 }
 </script>
 
