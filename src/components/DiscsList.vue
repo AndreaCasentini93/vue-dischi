@@ -26,6 +26,24 @@ export default {
         }
     },
     computed: {
+        genresArray: function() {
+            let newArray = [];
+            this.discs.forEach((element) => {
+                if (!newArray.includes(element.genre)) {
+                    newArray.push(element.genre);
+                }
+            });
+            return newArray;
+        },
+        authorsArray: function() {
+            let newArray = [];
+            this.discs.forEach((element) => {
+                if (!newArray.includes(element.author)) {
+                    newArray.push(element.author);
+                }
+            });
+            return newArray;
+        },
         musicGenre: function() {
             return this.discsGenre
         },
@@ -52,6 +70,9 @@ export default {
                 this.loading = false;
             })
             .catch()
+    },
+    destroyed: function() {
+        this.$emit('newArray', this.genreArray);
     }
 }
 </script>

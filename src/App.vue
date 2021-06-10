@@ -6,7 +6,7 @@
 
     <!-- MAIN -->
     <main>
-      <DiscsList :discsGenre="musicGenre" />
+      <DiscsList :discsGenre="musicGenre" :newArray="funzione" />
     </main>
     <!-- /MAIN -->
   </div>
@@ -31,6 +31,9 @@ export default {
   methods: {
     changeType: function(genre) {
       this.musicGenre = genre;
+    },
+    funzione: function(array) {
+      console.log(array);
     }
   },
 }
