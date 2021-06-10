@@ -55,11 +55,9 @@ export default {
             return newArray;
         },
         musicGenre: function() {
-            console.log('Genere = ', this.discsGenre);
             return this.discsGenre;
         },
         musicAuthor: function() {
-            console.log('Autore = ', this.discsAuthor);
             return this.discsAuthor;
         },
         selectedDiscs: function() {
