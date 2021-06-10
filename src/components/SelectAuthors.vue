@@ -1,5 +1,5 @@
 <template>
-    <select @change="changeType" id="select" class="form-select" aria-label="Default select example" v-model="authorName">
+    <select @change="changeName" id="select" class="form-select" aria-label="Default select example" v-model="authorName">
         <option selected>Seleziona un Autore</option>
         <option v-for="author, index in authors" :key="index" :value="author">{{ author }}</option>
     </select>
@@ -7,14 +7,12 @@
 
 <script>
 export default {
-    name: 'Select',
+    name: 'SelectAuthor',
     data: function() {
         return {
             authors: [
-                'Rock',
-                'Pop',
-                'Jazz',
-                'Metal',
+                'Bon Jovi',
+                'Queen'
             ],
             authorName: 'Seleziona un Autore'
         }
@@ -23,7 +21,7 @@ export default {
 
     },
     methods: {
-        changeType:function () {
+        changeName:function () {
             this.$emit('changeAuthor', this.authorName);
         }
     }

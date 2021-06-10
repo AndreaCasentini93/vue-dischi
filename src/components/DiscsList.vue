@@ -1,8 +1,8 @@
 <template>
     <section id="discs_list" v-if="!loading">
         <div class="my_container select_container">
-            <Select class="text-center" @changeGenre="changeType"/>
-            <SelectAuthors />
+            <Select @changeGenre="changeType"/>
+            <SelectAuthors @changeAuthor="changeName"/>
         </div>
         <div class="my_container">
             <Disc v-for="disc, index in selectedDiscs" :key="index" :card="disc" />
@@ -31,7 +31,8 @@ export default {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
             discs: [],
             loading: true,
-            discsGenre: ''
+            discsGenre: '',
+            discsAuthor: ''
         }
     },
     computed: {
@@ -71,6 +72,9 @@ export default {
     methods: {
         changeType: function(genre) {
             this.discsGenre = genre;
+        },
+        changeName: function(author) {
+            this.discsAuthor = author;
         }
     },
     created: function() {
