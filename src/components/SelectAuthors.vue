@@ -1,7 +1,7 @@
 <template>
-    <select @change="changeType" id="select" class="form-select" aria-label="Default select example" v-model="genreName">
-        <option selected>Seleziona un Genere</option>
-        <option v-for="genre, index in genres" :key="index" :value="genre">{{ genre }}</option>
+    <select @change="changeType" id="select" class="form-select" aria-label="Default select example" v-model="authorName">
+        <option selected>Seleziona un Autore</option>
+        <option v-for="author, index in authors" :key="index" :value="author">{{ author }}</option>
     </select>
 </template>
 
@@ -10,13 +10,13 @@ export default {
     name: 'Select',
     data: function() {
         return {
-            genres: [
+            authors: [
                 'Rock',
                 'Pop',
                 'Jazz',
                 'Metal',
             ],
-            genreName: 'Seleziona un Genere'
+            authorName: 'Seleziona un Autore'
         }
     },
     computed: {
@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         changeType:function () {
-            this.$emit('changeGenre', this.genreName);
+            this.$emit('changeAuthor', this.authorName);
         }
     }
 }
@@ -39,7 +39,6 @@ export default {
         width: unset;
         min-width: 220px;
         max-height: 38px;
-        margin-right: 30px;
         cursor: pointer;
     }
 </style>

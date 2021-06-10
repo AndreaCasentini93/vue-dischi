@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <!-- HEADER -->
-    <Header :image="logo" @changeGenre="changeType" />
+    <Header :image="logo" />
     <!-- /HEADER -->
 
     <!-- MAIN -->
     <main>
-      <DiscsList :discsGenre="musicGenre" :newArray="funzione" />
+      <DiscsList />
     </main>
     <!-- /MAIN -->
   </div>
@@ -27,15 +27,7 @@ export default {
       logo: require('./assets/img/spotify.png'),
       musicGenre: ''
     }
-  },
-  methods: {
-    changeType: function(genre) {
-      this.musicGenre = genre;
-    },
-    funzione: function(array) {
-      console.log(array);
-    }
-  },
+  }
 }
 </script>
 
