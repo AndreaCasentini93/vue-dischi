@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <!-- HEADER -->
-    <Header :image="logo" />
+    <Header :image="logo" :genresArray="genresArrayImport" :authorsArray="authorsArrayImport" @discsGenre="discsGenre" @discsAuthor="discsAuthor"/>
     <!-- /HEADER -->
 
     <!-- MAIN -->
     <main>
-      <DiscsList />
+      <DiscsList @genresArray="genresArray" @authorsArray="authorsArray" :discsGenreImport="discsGenreImport" :discsAuthorImport="discsAuthorImport"/>
     </main>
     <!-- /MAIN -->
   </div>
@@ -25,7 +25,25 @@ export default {
   data: function() {
     return {
       logo: require('./assets/img/spotify.png'),
-      musicGenre: ''
+      musicGenre: '',
+      genresArrayImport: [],
+      authorsArrayImport: [],
+      discsGenreImport: '',
+      discsAuthorImport: ''
+    }
+  },
+  methods: {
+    genresArray: function(array) {
+      this.genresArrayImport = array;
+    },
+    authorsArray: function(array) {
+      this.authorsArrayImport = array;
+    },
+    discsGenre: function(string) {
+      this.discsGenreImport = string;
+    },
+    discsAuthor: function(string) {
+      this.discsAuthorImport = string;
     }
   }
 }

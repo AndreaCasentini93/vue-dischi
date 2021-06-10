@@ -1,9 +1,5 @@
 <template>
     <section id="discs_list" v-if="!loading">
-        <div class="my_container select_container">
-            <Select @changeGenre="changeType" :array="genresArray"/>
-            <SelectAuthors @changeAuthor="changeName" :array="authorsArray"/>
-        </div>
         <div class="my_container">
             <Disc v-for="disc, index in selectedDiscs" :key="index" :card="disc" />
         </div>
@@ -15,24 +11,18 @@
 import axios from 'axios';
 import Disc from './Disc.vue';
 import Loading from './Loading.vue';
-import Select from './Select.vue';
-import SelectAuthors from './SelectAuthors.vue';
 
 export default {
     name: 'DiscsList',
     components: {
         Disc,
-        Loading,
-        Select,
-        SelectAuthors
+        Loading
     },
     data: function() {
         return {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
             discs: [],
-            loading: true,
-            discsGenre: '',
-            discsAuthor: ''
+            loading: true
         }
     },
     computed: {
@@ -55,10 +45,10 @@ export default {
             return newArray;
         },
         musicGenre: function() {
-            return this.discsGenre;
+            return this.discsGenreImport;
         },
         musicAuthor: function() {
-            return this.discsAuthor;
+            return this.discsAuthorImport;
         },
         selectedDiscs: function() {
 
@@ -76,13 +66,9 @@ export default {
 
         }
     },
-    methods: {
-        changeType: function(genre) {
-            this.discsGenre = genre;
-        },
-        changeName: function(author) {
-            this.discsAuthor = author;
-        }
+    props: {
+        discsGenreImport: String,
+        discsAuthorImport: String
     },
     created: function() {
         axios
@@ -90,11 +76,10 @@ export default {
             .then((response) => {
                 this.discs = response.data.response;
                 this.loading = false;
+                this.$emit('genresArray', this.genresArray);
+                this.$emit('authorsArray', this.authorsArray);
             })
             .catch()
-    },
-    destroyed: function() {
-        this.$emit('newArray', this.genreArray);
     }
 }
 </script>
@@ -107,20 +92,13 @@ export default {
         min-height: calc(100vh - 70px);
         background-color: $blue;
 
-        .my_container.select_container {
-            display: flex;
-            @include flex-centering;
-            max-width: 1170px;
-            padding-top: 20px;
-        }
-
         .my_container {
             display: flex;
             @include flex-centering('horizontal');
             align-content: center;
             flex-wrap: wrap;
             max-width: calc(1170px + 40px);
-            padding-bottom: 10px;
+            padding: 40px;
         }
     }
 </style>
