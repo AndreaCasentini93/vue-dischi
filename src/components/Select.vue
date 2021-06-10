@@ -24,7 +24,6 @@ export default {
     },
     methods: {
         changeType:function () {
-            console.log(this.genreName);
             this.$emit('changeGenre', this.genreName);
         }
     }
