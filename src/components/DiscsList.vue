@@ -1,8 +1,8 @@
 <template>
     <section id="discs_list" v-if="!loading">
         <div class="my_container select_container">
-            <Select @changeGenre="changeType"/>
-            <SelectAuthors @changeAuthor="changeName"/>
+            <Select @changeGenre="changeType" :array="genresArray"/>
+            <SelectAuthors @changeAuthor="changeName" :array="authorsArray"/>
         </div>
         <div class="my_container">
             <Disc v-for="disc, index in selectedDiscs" :key="index" :card="disc" />
@@ -55,16 +55,26 @@ export default {
             return newArray;
         },
         musicGenre: function() {
-            return this.discsGenre
+            return this.discsGenre;
+        },
+        musicAuthor: function() {
+            return this.discsAuthor;
         },
         selectedDiscs: function() {
 
-            if (this.musicGenre == '' || this.musicGenre == 'Seleziona un Genere') {
-                    return this.discs;
+            if (this.musicGenre == '' && this.musicAuthor == '' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == 'Seleziona un Autore' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == ''|| this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == '') {
+                console.log('Tutti')
+                return this.discs;
             }
 
             return this.discs.filter ((element) => {
-                return element.genre == this.musicGenre;
+                if (this.musicAuthor != '' && this.musicAuthor != 'Seleziona un Autore') {
+                    console.log('Caso 2')
+                    return element.author == this.musicAuthor;
+                } else if((this.musicGenre != '' && this.musicGenre != 'Seleziona un Genere')) {
+                    console.log('Caso 3')
+                    return element.genre == this.musicGenre;
+                }
             })
 
         }
