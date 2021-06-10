@@ -47,6 +47,9 @@ export default {
             this.musicGenre = genre;
         }
     },
+    props: {
+        discsGenre: String
+    },
     created: function() {
         axios
             .get(this.apiUrl)

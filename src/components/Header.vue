@@ -17,6 +17,11 @@ export default {
     components: {
         Select
     },
+    methods: {
+        changeType: function(genre) {
+            this.$emit('changeGenre', genre)
+        }
+    },
     props: {
         image: String
     }
