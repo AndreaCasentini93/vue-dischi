@@ -1,5 +1,6 @@
 <template>
     <section id="discs_list" v-if="!loading">
+        <Select />
         <div class="my_container">
             <Disc v-for="disc, index in discs" :key="index" :card="disc" />
         </div>
@@ -11,12 +12,14 @@
 import axios from 'axios';
 import Disc from './Disc.vue';
 import Loading from './Loading.vue';
+import Select from './Select.vue';
 
 export default {
     name: 'DiscsList',
     components: {
         Disc,
-        Loading
+        Loading,
+        Select
     },
     data: function() {
         return {
