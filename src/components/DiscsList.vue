@@ -49,7 +49,6 @@ export default {
             @include flex-centering('horizontal');
             align-content: center;
             flex-wrap: wrap;
-            height: 100%;
             padding: 50px 0;
         }
     }

@@ -28,7 +28,7 @@ export default {
 
             img {
                 max-width: 50px;
-                transition: filter .3s;
+                transition: filter .3s linear;
 
                 &:hover {
                     filter: brightness(130%);

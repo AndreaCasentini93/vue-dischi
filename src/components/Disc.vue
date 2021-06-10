@@ -20,9 +20,9 @@ export default {
     @import '../style/mixins.scss';
 
     a {
-        width: calc((100% / 5) - 36px);
-        padding: 10px;
-        margin: 12px 18px;
+        width: calc((100% / 5) - 40px);
+        padding: 20px;
+        margin: 15px 20px;
         background-color: $dark-grey;
         transition: transform .3s;
 
@@ -33,7 +33,7 @@ export default {
         img {
             display: block;
             width: 100%;
-            height: 180px;
+            height: 160px;
             margin-bottom: 15px;
             object-fit: cover;
             object-position: top;
@@ -42,14 +42,14 @@ export default {
         h4 {
             margin: 5px auto 15px auto;
             text-transform: uppercase;
-            font-size: 21px;
+            font-size: 18px;
             font-weight: 700;
             color: $white;
         }
 
         h6 {
             margin: 5px auto;
-            font-size: 18px;
+            font-size: 16px;
             color: $light-grey;
         }
     }
