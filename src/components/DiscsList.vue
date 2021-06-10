@@ -65,16 +65,13 @@ export default {
         selectedDiscs: function() {
 
             if (this.musicGenre == '' && this.musicAuthor == '' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == 'Seleziona un Autore' || this.musicGenre == 'Seleziona un Genere' && this.musicAuthor == ''|| this.musicGenre == '' && this.musicAuthor == 'Seleziona un Autore') {
-                console.log('Tutti')
                 return this.discs;
             }
 
             return this.discs.filter ((element) => {
                 if (this.musicAuthor != '' && this.musicAuthor != 'Seleziona un Autore') {
-                    console.log('Caso 2')
                     return element.author == this.musicAuthor;
                 } else if((this.musicGenre != '' && this.musicGenre != 'Seleziona un Genere')) {
-                    console.log('Caso 3')
                     return element.genre == this.musicGenre;
                 }
             })
