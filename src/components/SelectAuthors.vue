@@ -10,15 +10,16 @@ export default {
     name: 'SelectAuthor',
     data: function() {
         return {
-            authors: [
-                'Bon Jovi',
-                'Queen'
-            ],
             authorName: 'Seleziona un Autore'
         }
     },
     computed: {
-
+        authors: function() {
+            return this.array
+        }
+    },
+    props: {
+        array: Array
     },
     methods: {
         changeName:function () {

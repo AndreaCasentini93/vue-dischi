@@ -10,17 +10,16 @@ export default {
     name: 'Select',
     data: function() {
         return {
-            genres: [
-                'Rock',
-                'Pop',
-                'Jazz',
-                'Metal',
-            ],
             genreName: 'Seleziona un Genere'
         }
     },
     computed: {
-
+        genres: function() {
+            return this.array
+        }
+    },
+    props: {
+        array: Array
     },
     methods: {
         changeType:function () {
