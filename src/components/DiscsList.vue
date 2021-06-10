@@ -1,6 +1,5 @@
 <template>
     <section id="discs_list" v-if="!loading">
-        <Select @changeGenre="changeType"/>
         <div class="my_container">
             <Disc v-for="disc, index in selectedDiscs" :key="index" :card="disc" />
         </div>
@@ -12,24 +11,24 @@
 import axios from 'axios';
 import Disc from './Disc.vue';
 import Loading from './Loading.vue';
-import Select from './Select.vue';
 
 export default {
     name: 'DiscsList',
     components: {
         Disc,
-        Loading,
-        Select
+        Loading
     },
     data: function() {
         return {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
             discs: [],
-            loading: true,
-            musicGenre: ''
+            loading: true
         }
     },
     computed: {
+        musicGenre: function() {
+            return this.discsGenre
+        },
         selectedDiscs: function() {
 
             if (this.musicGenre == '' || this.musicGenre == 'Seleziona un Genere') {
@@ -40,11 +39,6 @@ export default {
                 return element.genre == this.musicGenre;
             })
 
-        }
-    },
-    methods: {
-        changeType: function(genre) {
-            this.musicGenre = genre;
         }
     },
     props: {
