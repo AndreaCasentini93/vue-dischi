@@ -57,10 +57,12 @@ export default {
             }
 
             return this.discs.filter ((element) => {
-                if (this.musicAuthor != '' && this.musicAuthor != 'Seleziona un Autore') {
+                if (this.musicAuthor != '' && this.musicAuthor != 'Seleziona un Autore' && this.musicGenre == '' || this.musicGenre == 'Seleziona un Genere') {
                     return element.author == this.musicAuthor;
-                } else if((this.musicGenre != '' && this.musicGenre != 'Seleziona un Genere')) {
+                } else if((this.musicGenre != '' && this.musicGenre != 'Seleziona un Genere' && this.musicAuthor == '' || this.musicAuthor == 'Seleziona un Autore')) {
                     return element.genre == this.musicGenre;
+                } else {
+                    return element.author == this.musicAuthor && element.genre == this.musicGenre;
                 }
             })
 
