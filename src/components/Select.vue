@@ -33,12 +33,6 @@ export default {
     @import '../style/variables.scss';
     @import '../style/mixins.scss';
 
-    .form-select {
-        display: inline-block;
-        width: unset;
-        min-width: 220px;
-        max-height: 38px;
-        margin-right: 30px;
-        cursor: pointer;
-    }
+    @include select;
+
 </style>
