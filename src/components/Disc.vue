@@ -21,8 +21,8 @@ export default {
 
     a {
         width: calc((100% / 5) - 30px);
-        padding: 15px;
-        margin: 15px 15px;
+        padding: 12px;
+        margin: 10px 15px;
         background-color: $dark-grey;
         transition: transform .3s;
 
@@ -42,15 +42,15 @@ export default {
             line-height: 1.5;
             margin: 5px auto 15px auto;
             text-transform: uppercase;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             color: $white;
         }
 
         h6 {
             line-height: 1.3;
-            margin: 5px auto 15px auto;
-            font-size: 12px;
+            margin: 5px auto 10px auto;
+            font-size: 14px;
             color: $light-grey;
         }
     }

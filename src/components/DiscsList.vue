@@ -97,8 +97,9 @@ export default {
             @include flex-centering('horizontal');
             align-content: center;
             flex-wrap: wrap;
-            max-width: calc(1000px + 40px);
-            padding: 30px;
+            max-width: calc(1050px + 40px);
+            padding-top: 20px;
+            padding-bottom: 10px;
         }
     }
 </style>
