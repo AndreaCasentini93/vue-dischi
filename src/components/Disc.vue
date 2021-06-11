@@ -42,14 +42,15 @@ export default {
             line-height: 1.5;
             margin: 5px auto 15px auto;
             text-transform: uppercase;
-            font-size: 15px;
+            font-size: 12px;
             font-weight: 700;
             color: $white;
         }
 
         h6 {
+            line-height: 1.3;
             margin: 5px auto 15px auto;
-            font-size: 15px;
+            font-size: 12px;
             color: $light-grey;
         }
     }
